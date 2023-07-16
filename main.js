@@ -34,4 +34,10 @@ $(document).ready(function () {
 
     $("#form-fields").append(newField);
   });
+
+  // Function to remove a field
+  $("#dynamic-form").on("click", ".remove", function () {
+    let fieldID = $(this).data("field");
+    $("#" + fieldID).remove();
+  });
 });
