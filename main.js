@@ -1,10 +1,16 @@
 $(document).ready(function () {
   let fieldCounter = 0;
+  const fielsNames = [];
 
   // Function to add a new text field
   $("#add-text-field").on("click", function () {
-    fieldCounter++;
     let fieldName = prompt("Enter a name for the text field:");
+    if (fielsNames.includes(fieldName)) {
+      alert("Field already exists!");
+      return;
+    }
+    fieldCounter++;
+    fielsNames.push(fieldName);
     let newField = `<div id="field-${fieldCounter}">
     <label for="text-${fieldCounter}">${fieldName}:</label>
     <input type="text" id="text-${fieldCounter}" name="${fieldName}"/>
@@ -15,8 +21,13 @@ $(document).ready(function () {
 
   // Function to add new select field
   $("#add-select-field").on("click", function () {
-    fieldCounter++;
     let fieldName = prompt("Enter a name for the select field:");
+    if (fielsNames.includes(fieldName)) {
+      alert("Field already exists!");
+      return;
+    }
+    fieldCounter++;
+    fielsNames.push(fieldName);
     let optionString = prompt(
       "Enter the options for the select field, separated by commas:"
     );
