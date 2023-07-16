@@ -22,6 +22,7 @@ $(document).ready(function () {
     let newField = `<div id="field-${fieldCounter}">
     <label for="select-${fieldCounter}">${fieldName}:</label>
     <select id="select-${fieldCounter}" name="${fieldName}"></select>
+    <button class="remove" data-field="field-${fieldCounter}">Remove</button>
     </div>`;
 
     $('#form-fields').append(newField);
