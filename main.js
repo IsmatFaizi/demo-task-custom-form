@@ -13,4 +13,10 @@ $(document).ready(function () {
     $("#form-fields").append(newField);
   });
 
+  // Function to add new select field
+  $("#add-select-field").on("click", function () {
+    fieldCounter++;
+    let fieldName = prompt("Enter a name for the select field:");
+    let optionString = prompt('Enter the options for the select field, separated by commas:');
+  });
 });
