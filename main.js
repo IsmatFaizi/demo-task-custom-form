@@ -52,8 +52,6 @@ $(document).ready(function () {
         formData[field.name] = field.value;
       });
 
-    console.log(formData);
-
     let table = "<table><tr>";
 
     // Create table headers
