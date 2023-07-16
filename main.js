@@ -40,4 +40,26 @@ $(document).ready(function () {
     let fieldID = $(this).data("field");
     $("#" + fieldID).remove();
   });
+
+  // Function to submit the form
+  $("#dynamic-form").on("submit", function (e) {
+    e.preventDefault();
+    let formData = {};
+
+    // collect form data
+    $("#dynamic-form")
+      .serializeArray()
+      .forEach((field) => {
+        formData[field.name] = field.value;
+      });
+
+    // create the table
+    let table = `<table>
+    <tr>
+    ${formData.map((field) => `<th>${field}</th>`)}
+    </tr>
+    </table>`;
+
+    $('#table-container').html(table);
+  });
 });
