@@ -52,14 +52,24 @@ $(document).ready(function () {
         formData[field.name] = field.value;
       });
 
-    let table = '<table><tr>';
+    console.log(formData);
 
+    let table = "<table><tr>";
+
+    // Create table headers
     for (let key in formData) {
-        table += '<th>' + key + '</th>';
+      table += "<th>" + key + "</th>";
     }
 
-    table += '</tr>';
+    table += "</tr>";
 
-    $('#table-container').html(table);
+    // Create table data
+    for (let key in formData) {
+      table += "<td>" + formData[key] + "</td>";
+    }
+
+    table += "</tr></table>";
+
+    $("#table-container").html(table);
   });
 });
