@@ -23,9 +23,12 @@ $(document).ready(function () {
     let options = optionString.split(",");
     let newField = `<div id="field-${fieldCounter}">
     <label for="select-${fieldCounter}">${fieldName}:</label>
-    <select id="select-${fieldCounter}" name="${fieldName}">${options.map(
-      (option) => `<option value="${option}">${option}</option>`
-    )}</select>
+    <select id="select-${fieldCounter}" name="${fieldName}">
+        <option value="" disabled selected>Select an option</option>
+        ${options.map(
+          (option) => `<option value="${option}">${option}</option>`
+        )}
+    </select>
     <button class="remove" data-field="field-${fieldCounter}">Remove</button>
     </div>`;
 
