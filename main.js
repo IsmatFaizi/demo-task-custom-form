@@ -18,5 +18,12 @@ $(document).ready(function () {
     fieldCounter++;
     let fieldName = prompt("Enter a name for the select field:");
     let optionString = prompt('Enter the options for the select field, separated by commas:');
+    let options = optionString.split(',');
+    let newField = `<div id="field-${fieldCounter}">
+    <label for="select-${fieldCounter}">${fieldName}:</label>
+    <select id="select-${fieldCounter}" name="${fieldName}"></select>
+    </div>`;
+
+    $('#form-fields').append(newField);
   });
 });
